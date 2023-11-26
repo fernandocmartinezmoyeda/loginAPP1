@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Hotel Dashboard</title>
+
+    <style>
+        body {
+            background-image: url("/static/css/background.jpg");
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            color: #000;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        .container {
+            border-radius: 10px;
+            padding: 30px;
+            height: auto;
+        }
+
+        .jumbotron {
+            background-color: rgba(255, 255, 255, 0.7);
+            border: 1px solid #050202;
+            border-radius: 10px;
+            padding: 40px;
+            color: #000;
+        }
+
+        /* Font size adjustments for specific elements */
+        h1 {
+            font-size: 2em; /* Larger size for the main heading */
+        }
+
+        p, li, a {
+            font-size: 1.2em; /* Smaller size for paragraphs, list items, and links */
+        }
+
+        /* Dropdown styles */
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f9f9f9;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+            z-index: 1;
+        }
+
+        .dropdown-content a {
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+
+        .dropdown-content a:hover {
+            background-color: #f1f1f1;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        {% block content %}
+        <div class="jumbotron">
+            <h1 class="display-4">Welcome to the Hotel Dashboard!</h1>
+            <p class="lead">Explore the features and take control of your hotel management.</p>
+            <hr class="my-4">
+            <p>Manage your hotels:</p>
+            <ul>
+                <li><a href="{{ url_for('hotel') }}" class="btn btn-link" style="font-size: 1em;">Hotels</a></li>
+                <li><a href="{{ url_for('my_hotels') }}" class="btn btn-link" style="font-size: 1em;">My Hotels</a></li>
+                <li class="dropdown">
+                    <a href="#" class="btn btn-link" style="font-size: 1em;">Menu</a>
+                    <div class="dropdown-content">
+                        <a href="#" style="font-size: 1em;">Settings</a>
+                        <a href="#" style="font-size: 1em;">Profile</a>
+                        <a href="{{ url_for('logout') }}" style="font-size: 1em;">Log Out</a>
+                    </div>
+                </li>
+            </ul>
+            <p class="lead">
+                <a class="btn btn-primary btn-lg" href="#" role="button" style="font-size: 1em;">Learn more</a>
+            </p>
+        </div>
+        {% endblock %}
+    </div>
+
+</body>
+
+</html>
