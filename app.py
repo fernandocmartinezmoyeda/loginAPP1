@@ -11,7 +11,7 @@ print(secret_key)
 
 
 app = Flask(__name__)
-app.config['SECRET_KEY'] = 'secret-key'
+app.config['SECRET_KEY'] = secret_key
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///instance/test.db'
 db = SQLAlchemy(app)
 bootstrap = Bootstrap(app)
