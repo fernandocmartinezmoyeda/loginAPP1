@@ -12,7 +12,7 @@ print(secret_key)
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'secret-key'
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///test.db'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///workspaces/loginAPP1/instance/test.db'
 db = SQLAlchemy(app)
 bootstrap = Bootstrap(app)
 app.secret_key = os.environ.get('FLASK_SECRET_KEY', 'your_generated_secret_key')
