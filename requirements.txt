@@ -141,3 +141,4 @@ webcolors
 webencodings
 websocket-client
 Werkzeug
+gunicorn
