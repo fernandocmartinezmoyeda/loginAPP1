@@ -109,7 +109,7 @@ referencing
 requests
 rfc3339-validator
 rfc3986-validator
-rpds-py
+rpds-py==0.10.6
 scikit-learn
 scipy
 seaborn
