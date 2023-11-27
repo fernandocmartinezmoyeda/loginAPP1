@@ -4,6 +4,7 @@
         <input type="text" class="form-control mr-2" placeholder="Search Hotel" name="hotel_name">
         <button type="submit" class="btn btn-primary">Search</button>
     </form>
+    <a href="{{ url_for('dashboard') }}" class="btn btn-secondary mb-3">Back to Dashboard</a>
 
     {% for hotel in hotels %}
         <div class="card mb-3">
