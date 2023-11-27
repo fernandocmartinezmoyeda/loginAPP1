@@ -6,7 +6,7 @@ import secrets
 import os
 from flask_migrate import Migrate
 
-migrate = Migrate(app, db)
+
 
 # Generate a secure random string (use this as your secret key)
 secret_key = secrets.token_hex(16)
@@ -17,6 +17,7 @@ app = Flask(__name__)
 app.config['SECRET_KEY'] = secret_key
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///test.db'
 db = SQLAlchemy(app)
+migrate = Migrate(app, db)
 bootstrap = Bootstrap(app)
 app.secret_key = os.environ.get('FLASK_SECRET_KEY', 'your_generated_secret_key')
 
