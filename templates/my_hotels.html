@@ -1,17 +1,17 @@
 {% block tab_content %}
-    <h2>My Hotels</h2>
-    <ul class="list-group">
-        {% for user_hotel in user_hotels %}
-            <li class="list-group-item d-flex justify-content-between align-items-center">
-                {{ user_hotel.name }}
-                <div>
-                    <form action="{{ url_for('my_hotels') }}" method="post" class="mr-2">
-                        <input type="hidden" name="hotel_id_to_remove" value="{{ user_hotel.id }}">
-                        <button type="submit" class="btn btn-danger btn-sm">Remove</button>
-                    </form>
-                    <a href="{{ url_for('hotel_details', hotel_id=user_hotel.id) }}" class="btn btn-info btn-sm">View Details</a>
-                </div>
-            </li>
-        {% endfor %}
-    </ul>
+<h2>My Hotels</h2>
+<ul class="list-group">
+    {% for user_hotel in user_hotels %}
+        <li class="list-group-item d-flex justify-content-between align-items-center">
+            {{ user_hotel.name }}
+            <div>
+                <form action="{{ url_for('my_hotels') }}" method="post" class="mr-2">
+                    <input type="hidden" name="hotel_id_to_remove" value="{{ user_hotel.id }}">
+                    <button type="submit" class="btn btn-danger btn-sm">Remove</button>
+                </form>
+                <button type="button" class="btn btn-info btn-sm">View Details</button>
+            </div>
+        </li>
+    {% endfor %}
+</ul>
 {% endblock %}
