@@ -4,6 +4,9 @@ from werkzeug.security import generate_password_hash, check_password_hash
 from flask_bootstrap import Bootstrap
 import secrets
 import os
+from flask_migrate import Migrate
+
+migrate = Migrate(app, db)
 
 # Generate a secure random string (use this as your secret key)
 secret_key = secrets.token_hex(16)
